@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="Voe-Tx-rLC" id="GzC-gU-4Uq"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="ShadowsocksX_NG" customModuleProvider="target">
+            <connections>
+                <outlet property="autoModeMenuItem" destination="r07-Gu-aEz" id="9aH-pQ-Rgi"/>
+                <outlet property="copyHttpProxyExportCmdLineMenuItem" destination="lg6-To-GZA" id="VTb-he-dg4"/>
+                <outlet property="exportAllServerProfileItem" destination="6k0-gn-DQv" id="W2x-96-ISj"/>
+                <outlet property="globalModeMenuItem" destination="Mw3-Jm-eXA" id="ar5-Yx-3ze"/>
+                <outlet property="importBunchJsonFileItem" destination="T9g-gy-gvv" id="vua-jg-YWe"/>
+                <outlet property="manualModeMenuItem" destination="8PR-gs-c5N" id="9qz-mU-5kt"/>
+                <outlet property="runningStatusMenuItem" destination="fzk-mE-CEV" id="Vwm-Rg-Ykn"/>
+                <outlet property="scanQRCodeMenuItem" destination="Qe6-bF-paT" id="XHa-pa-nCa"/>
+                <outlet property="serversMenuItem" destination="u5M-hQ-VSc" id="8gp-SY-Y4U"/>
+                <outlet property="serversPreferencesMenuItem" destination="M5r-E7-44f" id="voe-SX-k6a"/>
+                <outlet property="showBunchJsonExampleFileItem" destination="pdy-JE-50Q" id="xcZ-ep-mON"/>
+                <outlet property="showQRCodeMenuItem" destination="R6A-96-Zcb" id="XHz-pz-nCz"/>
+                <outlet property="statusMenu" destination="Hob-KD-bx9" id="clA-ZW-0pT"/>
+                <outlet property="toggleRunningMenuItem" destination="GSu-Tf-StS" id="XHw-pU-nCa"/>
+            </connections>
+        </customObject>
+        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <menu title="ShadowsocksX-NG" id="Hob-KD-bx9">
+            <items>
+                <menuItem title="Showsocks: On" enabled="NO" id="fzk-mE-CEV">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem title="Turn ShadowsocksX On" id="GSu-Tf-StS">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="toggleRunning:" target="Voe-Tx-rLC" id="EvE-23-Wiv"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="LXP-yK-yQu"/>
+                <menuItem title="Proxy Auto Configure Mode" id="r07-Gu-aEz">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="selectPACMode:" target="Voe-Tx-rLC" id="l36-cd-xl7"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Global Mode" id="Mw3-Jm-eXA">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="selectGlobalMode:" target="Voe-Tx-rLC" id="7QH-HB-B2e"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Manual Mode" id="8PR-gs-c5N">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="selectManualMode:" target="Voe-Tx-rLC" id="Xxb-28-6fi"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="BMf-0T-UcX"/>
+                <menuItem title="Servers" id="u5M-hQ-VSc">
+                    <modifierMask key="keyEquivalentModifierMask" shift="YES"/>
+                    <menu key="submenu" title="Servers" id="9Y1-db-3HK">
+                        <items>
+                            <menuItem title="Server Preferences..." id="M5r-E7-44f">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="editServerPreferences:" target="Voe-Tx-rLC" id="6Lv-6i-Neb"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="4iN-w2-but"/>
+                            <menuItem title="Show Bunch Json Example File..." id="pdy-JE-50Q">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="showBunchJsonExampleFileWithSender:" target="Voe-Tx-rLC" id="lMy-Lo-OyB"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Import Bunch Json File..." id="T9g-gy-gvv">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="importBunchJsonFileWithSender:" target="Voe-Tx-rLC" id="bRk-cg-9yn"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Export All Server To Json..." id="6k0-gn-DQv">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="exportAllServerProfileWithSender:" target="Voe-Tx-rLC" id="0ip-dJ-juc"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Scan QR Code From Screen ..." id="Qe6-bF-paT">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="scanQRCodeFromScreen:" target="Voe-Tx-rLC" id="zQZ-IT-H4a"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Show QR Code For Current Server..." id="R6A-96-Zcb">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="showQRCodeForCurrentServer:" target="Voe-Tx-rLC" id="t45-Zk-cai"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="vwY-hQ-ZIz"/>
+                <menuItem title="Preferences..." keyEquivalent="," id="4CS-qD-zW5">
+                    <connections>
+                        <action selector="showAllInOnePreferences:" target="Voe-Tx-rLC" id="2of-nZ-atc"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Copy HTTP Proxy Shell Export Line" id="lg6-To-GZA">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="copyExportCommand:" target="Voe-Tx-rLC" id="2U4-3M-sAK"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Update PAC from GFW List" id="TFc-Ec-duM">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="updateGFWList:" target="Voe-Tx-rLC" id="Ztt-PS-F3T"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Edit User Rules For PAC..." id="rms-p0-CvB">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="editUserRulesForPAC:" target="Voe-Tx-rLC" id="ZtK-2d-Pcl"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="DTJ-NF-Wxr"/>
+                <menuItem title="Show Logs..." id="Jfy-sf-Fhl">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="showLogs:" target="Voe-Tx-rLC" id="5FZ-Xo-DGb"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Feedback" id="W7u-7g-Gv4">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="feedback:" target="Voe-Tx-rLC" id="ogn-lf-bqE"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="About" id="LgB-6g-Gba">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="showAbout:" target="Voe-Tx-rLC" id="ToP-D0-suY"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="lSf-ni-kjo"/>
+                <menuItem title="Quit" keyEquivalent="q" id="vJS-JW-byz">
+                    <connections>
+                        <action selector="terminate:" target="-2" id="Mrp-4z-omR"/>
+                    </connections>
+                </menuItem>
+            </items>
+            <point key="canvasLocation" x="-2367" y="-139"/>
+        </menu>
+    </objects>
+</document>
